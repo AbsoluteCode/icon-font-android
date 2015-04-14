@@ -18,6 +18,7 @@ import static android.util.TypedValue.applyDimension;
  */
 public class FontHelper {
     public static final String ICON_FONT_FOLDER = "icon_tmp";
+    public static String ICON_PREFIX = "fa";
 
     private FontHelper() {
         // Prevents instantiation
@@ -77,7 +78,7 @@ public class FontHelper {
     }
 
     public static StringBuilder replaceIcons(StringBuilder text) {
-        int startIndex = text.indexOf("{lia");
+        int startIndex = text.indexOf("{" + ICON_PREFIX);
         if (startIndex == -1) {
             return text;
         }
